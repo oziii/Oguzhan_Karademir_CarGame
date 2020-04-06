@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 4e46160ed448d6143aa5585e8612cbdc
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - GameArea: {fileID: 2636324916399157189, guid: 71ec8d83c40ed6645a0fc125589cefce,
+      type: 3}
+  - Obstacles1: {instanceID: 0}
+  - Obstacles2: {instanceID: 0}
+  - Obstacles3: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
