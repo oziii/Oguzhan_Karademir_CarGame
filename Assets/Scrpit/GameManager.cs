@@ -35,6 +35,8 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
+        //level dizinindeki bütün levelleri gamemanager dizisine ekliyoruz.
+        // we add all the levels in the level directory to the gamemanager list.
         var level = Resources.LoadAll("Level", typeof(GameObject));
         foreach (GameObject e in level)
         {
@@ -48,6 +50,7 @@ public class GameManager : MonoBehaviour
 
     void timeCounter()
     {
+        //Timer
         if (timeStart)
         {
             currentTime -= 1 * Time.deltaTime;
@@ -75,18 +78,22 @@ public class GameManager : MonoBehaviour
 
     public void CarRestart()
     {
+        //Araba engele çarptığında level ve entranceNumber değişmez yeni araba yaratılır.
+        // When the car hits the obstacle, the level and entranceNumber do not change, creating a new car.
         CarSpawn(level, entranceNumber);
     }
 
     public void NewCarEntance()
     {
+        //Yeni level kontrolü
         if(entranceNumber == level.GetComponent<LevelManager>().entrancesList.Count-1)
         {
             Destroy(level);
             UIManager.GetComponent<UIManager>().NextLevel((levelNumber+1).ToString());
         }
         else 
-        { 
+        {   // yeni levele gelinmemişse yeni hedef ve entrance de araba yaratılır.
+            // If there is no new level, a new destination and a car are created at the entrance.
             level.GetComponent<LevelManager>().entrancesList[entranceNumber].SetActive(false);
             level.GetComponent<LevelManager>().targetsList[entranceNumber].SetActive(false);
             entranceNumber++;

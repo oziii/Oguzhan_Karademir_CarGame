@@ -9,10 +9,12 @@ public class EditorScript : MonoBehaviour
     static void GameAreaCreate(MenuCommand mc)
     {
         //Prefabı dizinden çekiyoruz.
+        // We pull the prefab from the path.
         Object gameAreaPrefab = AssetDatabase.LoadAssetAtPath("Assets/Prefab/GameArea.prefab", typeof(GameObject));
         if (gameAreaPrefab != null)
         {
             //Obje null değilse prefabı Instantiate yapıyoruz.
+            // If the object is not null, we make the prefab Instantiate.
             PrefabUtility.InstantiatePrefab(gameAreaPrefab);
         }
     }
